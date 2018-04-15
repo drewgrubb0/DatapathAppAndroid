@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Datapath Project</string>
+
+    <string-array name="names">
+        <item>Add</item>
+        <item>Subtract</item>
+        <item>Load Word</item>
+        <item>Store</item>
+        <item>Branch Equal</item>
+        <item>Jump</item>
+    </string-array>
+
+    <string-array name="instructions">
+        <item>add $d, $s, $t</item>
+        <item>sub $d, $s, $t</item>
+        <item>lw $t, off($s)</item>
+        <item>sw $t, off($s)</item>
+        <item>beq $d, $s, off</item>
+        <item>j target</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>Adds two registers, storing the result in register d</item>
+        <item>Subtracts two registers, storing the result in register d</item>
+        <item>Loads a word into register t from specified address</item>
+        <item>Stores a word into register t from specified address</item>
+        <item>Branches to PC+offset if the two registers are equal</item>
+        <item>Jumps to the target offset</item>
+    </string-array>
+
+</resources>
