@@ -10,10 +10,10 @@ public class InstructionSet
     public static final int TYPE_BRANCH = 3;
 
     //TODO
-    public static final boolean[] ALU_INSTRUCTION = {};
-    public static final boolean[] LOAD_INSTRUCTION = {false, true, true, false, false, true, false, true, false, false, false, true, false, true, false, false, true, false};
-    public static final boolean[] STORE_INSTRUCTION = {};
-    public static final boolean[] BRANCH_INSTRUCTION = {};
+    public static final boolean[] ALU_INSTRUCTION = {true, true, true, false, false, true, true, false, true, true, false, true, true, false, false, false, true, true};
+    public static final boolean[] LOAD_INSTRUCTION = {true, true, true, false, false, true, true, true, false, true, true, true, false, true, false, true, true, true};
+    public static final boolean[] STORE_INSTRUCTION = {true, true, true, false, false, true, true, true, true, true, false, false, true, true, false, false, true, true};
+    public static final boolean[] BRANCH_INSTRUCTION = {true, true, true, true, true, true, true, true, true, true, false, false, false, false, true, false, true, true};
     //TODO
 
     /**
