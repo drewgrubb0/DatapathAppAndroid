@@ -10,12 +10,15 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity
 {
     ListView pathList;
     String[] names;
     String[] instructions;
     String[] descriptions;
+    String[] types;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity
         names = res.getStringArray(R.array.names);
         instructions = res.getStringArray(R.array.instructions);
         descriptions = res.getStringArray(R.array.descriptions);
+        types = res.getStringArray(R.array.types);
 
         InstructionAdapter instructionAdapter = new InstructionAdapter(this, names, instructions, descriptions);
         pathList.setAdapter(instructionAdapter);
@@ -39,7 +43,8 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int index, long id)
             {
                 Intent showPathDisplay = new Intent(getApplicationContext(), DatapathActivity.class);
-                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_TO_SHOW", index);
+                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_NAME", names[index]);
+                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_TYPE", types[index]);
                 startActivity(showPathDisplay);
             }
         });
@@ -68,8 +73,13 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                //Sends to DataPathActivity with no information
+                //Sends to DataPathActivity with a random instruction
+                Random random = new Random();
+                int itemIndex = random.nextInt(instructions.length);
+
                 Intent showPathDisplay = new Intent(getApplicationContext(), DatapathActivity.class);
+                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_NAME", "~" + names[itemIndex]);
+                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_TYPE", "~" + types[itemIndex]);
                 startActivity(showPathDisplay);
             }
         });

@@ -7,7 +7,6 @@
         <item>Load Word</item>
         <item>Store</item>
         <item>Branch Equal</item>
-        <item>Jump</item>
     </string-array>
 
     <string-array name="instructions">
@@ -16,7 +15,6 @@
         <item>lw $t, off($s)</item>
         <item>sw $t, off($s)</item>
         <item>beq $d, $s, off</item>
-        <item>j target</item>
     </string-array>
 
     <string-array name="descriptions">
@@ -25,7 +23,20 @@
         <item>Loads a word into register t from specified address</item>
         <item>Stores a word into register t from specified address</item>
         <item>Branches to PC+offset if the two registers are equal</item>
-        <item>Jumps to the target offset</item>
+    </string-array>
+
+    <!-- Current Types:
+        ALU: 0
+        Load: 1
+        Store: 2
+        Branch: 3
+     -->
+    <string-array name="types">
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 
 </resources>
