@@ -1,28 +1,36 @@
 package com.termproject.cs3339.instructions;
 
+import android.widget.ImageView;
+
 public class Instruction
 {
     private boolean paths[];
-    private int type;
 
     /**
      * Create new instruction
-     * @param type the type of instruction this instruction will become
      */
-    public Instruction(int type)
+    public Instruction(ImageView[] views)
     {
-        this.type = type;
-        this.paths = new boolean[16];
+        this.paths = new boolean[18];
+    }
+
+    /**
+     * Sets the entire paths array to the passed instruction paths
+     * @param newPaths the paths to be transferred over.
+     */
+    public void setPaths(boolean[] newPaths)
+    {
+        for(int x = 0 ; x < paths.length ; x++)
+            this.paths[x] = newPaths[x];
     }
 
     /**
      * Sets boolean value of a particular index in paths
-     * @param index
-     * @param val
+     * @param index the index of the path to change.
      */
-    public void setValue(int index, boolean val)
+    public void changeValue(int index)
     {
-        paths[index] = val;
+        paths[index] = !paths[index];
     }
 
     /**

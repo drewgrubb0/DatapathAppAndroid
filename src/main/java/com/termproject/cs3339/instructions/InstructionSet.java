@@ -4,15 +4,17 @@ import java.util.Arrays;
 
 public class InstructionSet
 {
-    private static final int TYPE_ALU = 0;
-    private static final int TYPE_LOAD = 1;
-    private static final int TYPE_STORE = 2;
-    private static final int TYPE_BRANCH = 3;
+    public static final int TYPE_ALU = 0;
+    public static final int TYPE_LOAD = 1;
+    public static final int TYPE_STORE = 2;
+    public static final int TYPE_BRANCH = 3;
 
-    private static final boolean[] ALU_INSTRUCTION = {};
-    private static final boolean[] LOAD_INSTRUCTION = {};
-    private static final boolean[] STORE_INSTRUCTION = {};
-    private static final boolean[] BRANCH_INSTRUCTION = {};
+    //TODO
+    public static final boolean[] ALU_INSTRUCTION = {};
+    public static final boolean[] LOAD_INSTRUCTION = {false, true, true, false, false, true, false, true, false, false, false, true, false, true, false, false, true, false};
+    public static final boolean[] STORE_INSTRUCTION = {};
+    public static final boolean[] BRANCH_INSTRUCTION = {};
+    //TODO
 
     /**
      * Checks to see if an instruction is equal to the type of instruction
@@ -34,7 +36,7 @@ public class InstructionSet
             case TYPE_BRANCH:
                 return Arrays.equals(instruction.getPaths(), BRANCH_INSTRUCTION);
             default:
-                return Arrays.equals(instruction.getPaths(), new boolean[16]);
+                return Arrays.equals(instruction.getPaths(), new boolean[18]);
         }
     }
 
@@ -56,7 +58,7 @@ public class InstructionSet
             case TYPE_BRANCH:
                 return BRANCH_INSTRUCTION;
             default:
-                return new boolean[16];
+                return new boolean[18];
         }
     }
 }

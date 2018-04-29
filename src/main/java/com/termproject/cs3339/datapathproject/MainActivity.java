@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
             {
                 Intent showPathDisplay = new Intent(getApplicationContext(), DatapathActivity.class);
                 showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_NAME", names[index]);
-                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_TYPE", types[index]);
+                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_TYPE", Integer.parseInt(types[index]));
                 startActivity(showPathDisplay);
             }
         });
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity
 
                 Intent showPathDisplay = new Intent(getApplicationContext(), DatapathActivity.class);
                 showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_NAME", "~" + names[itemIndex]);
-                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_TYPE", "~" + types[itemIndex]);
+                showPathDisplay.putExtra("com.termproject.cs3339.datapathproject.INSTRUCTION_TYPE", Integer.parseInt(types[itemIndex]));
                 startActivity(showPathDisplay);
             }
         });
