@@ -9,12 +9,10 @@ public class InstructionSet
     public static final int TYPE_STORE = 2;
     public static final int TYPE_BRANCH = 3;
 
-    //TODO
     public static final boolean[] ALU_INSTRUCTION = {true, true, true, false, false, true, true, false, true, true, false, true, true, false, false, false, true, true};
     public static final boolean[] LOAD_INSTRUCTION = {true, true, true, false, false, true, true, true, false, true, true, true, false, true, false, true, true, true};
     public static final boolean[] STORE_INSTRUCTION = {true, true, true, false, false, true, true, true, true, true, false, false, true, true, false, false, true, true};
     public static final boolean[] BRANCH_INSTRUCTION = {true, true, true, true, true, true, true, true, true, true, false, false, false, false, true, false, true, true};
-    //TODO
 
     /**
      * Checks to see if an instruction is equal to the type of instruction
